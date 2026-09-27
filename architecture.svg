@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1060" viewBox="0 0 1600 1060" role="img" aria-labelledby="title description">
+  <title id="title">Airbnb Listing Clone Architecture</title>
+  <desc id="description">Diagram of the Next.js app shell, page components, photo interaction flow, listing data, and static assets.</desc>
+  <defs>
+    <style>
+      text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #202124; }
+      .title { font-size: 32px; font-weight: 700; }
+      .subtitle { font-size: 15px; fill: #62676f; }
+      .section { font-size: 13px; font-weight: 700; letter-spacing: 1.1px; fill: #62676f; }
+      .head { font-size: 17px; font-weight: 650; }
+      .body { font-size: 14px; fill: #44484f; }
+      .small { font-size: 12px; fill: #68707a; }
+      .mono { font-family: "Cascadia Code", "SFMono-Regular", Consolas, monospace; font-size: 12px; fill: #545d68; }
+      .card { fill: #fff; stroke: #dfe3e8; stroke-width: 1.4; }
+      .line { fill: none; stroke: #aab3bf; stroke-width: 2; }
+      .flow { fill: none; stroke: #e24b68; stroke-width: 2.5; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#aab3bf" />
+    </marker>
+    <marker id="arrowPink" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#e24b68" />
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#263447" flood-opacity=".08" />
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1060" fill="#f6f7f9" />
+  <text x="64" y="62" class="title">Airbnb Listing Clone</text>
+  <text x="66" y="91" class="subtitle">Application architecture | Next.js App Router | React 19 | TypeScript | Tailwind CSS 4</text>
+
+  <text x="64" y="137" class="section">APP SHELL</text>
+  <rect x="64" y="153" width="1472" height="103" rx="14" class="card" filter="url(#shadow)" />
+  <rect x="82" y="173" width="225" height="64" rx="10" fill="#eef2f7" />
+  <text x="101" y="198" class="head">RootLayout</text>
+  <text x="101" y="220" class="mono">src/app/layout.tsx</text>
+  <path d="M319 205h45" class="line" marker-end="url(#arrow)" />
+  <rect x="376" y="173" width="323" height="64" rx="10" fill="#eef2f7" />
+  <text x="396" y="198" class="head">Global document and metadata</text>
+  <text x="396" y="220" class="mono">globals.css | fonts | theme tokens</text>
+  <path d="M711 205h45" class="line" marker-end="url(#arrow)" />
+  <rect x="768" y="173" width="742" height="64" rx="10" fill="#fff3f5" stroke="#f0c7d0" stroke-width="1.4" />
+  <text x="789" y="198" class="head">Home page composition</text>
+  <text x="789" y="220" class="mono">src/app/page.tsx | owns photo tour and lightbox state</text>
+
+  <text x="64" y="301" class="section">LISTING PAGE COMPONENTS</text>
+  <rect x="64" y="318" width="1472" height="313" rx="14" class="card" filter="url(#shadow)" />
+
+  <rect x="88" y="344" width="265" height="104" rx="11" fill="#f8f3ec" stroke="#e8dfd2" />
+  <text x="108" y="372" class="head">Header and navigation</text>
+  <text x="108" y="397" class="mono">Header | SubNav</text>
+  <text x="108" y="423" class="small">SubNav watches scroll sentinel</text>
+
+  <rect x="379" y="344" width="286" height="104" rx="11" fill="#edf5fb" stroke="#d6e5f1" />
+  <text x="399" y="372" class="head">Listing gallery</text>
+  <text x="399" y="397" class="mono">ListingHeader | Gallery</text>
+  <text x="399" y="423" class="small">Photo clicks pass selected source URL</text>
+
+  <rect x="691" y="344" width="350" height="104" rx="11" fill="#eef7f1" stroke="#d6eadb" />
+  <text x="711" y="372" class="head">Listing details</text>
+  <text x="711" y="397" class="mono">ListingBody | Description | Amenities</text>
+  <text x="711" y="423" class="small">AvailabilityCalendar manages date range</text>
+
+  <rect x="1067" y="344" width="445" height="104" rx="11" fill="#fff4e9" stroke="#f1e0cb" />
+  <text x="1087" y="372" class="head">Booking panel</text>
+  <text x="1087" y="397" class="mono">BookingCard</text>
+  <text x="1087" y="423" class="small">Price | dates | guests | reserve</text>
+
+  <path d="M224 456v38h200" class="line" marker-end="url(#arrow)" />
+  <path d="M522 456v38" class="line" marker-end="url(#arrow)" />
+  <path d="M864 456v38" class="line" marker-end="url(#arrow)" />
+  <path d="M1290 456v38h-153" class="line" marker-end="url(#arrow)" />
+
+  <rect x="88" y="502" width="265" height="91" rx="11" fill="#f4effb" stroke="#e4d9f2" />
+  <text x="108" y="531" class="head">Reviews</text>
+  <text x="108" y="555" class="mono">Reviews.tsx</text>
+  <text x="108" y="576" class="small">Ratings | topic chips | reviewer cards</text>
+
+  <rect x="379" y="502" width="286" height="91" rx="11" fill="#eff4f8" stroke="#dce5ec" />
+  <text x="399" y="531" class="head">Location and host</text>
+  <text x="399" y="555" class="mono">LocationAndHost.tsx</text>
+  <text x="399" y="576" class="small">Map | host | policies | nearby stays</text>
+
+  <rect x="691" y="502" width="821" height="91" rx="11" fill="#fff" stroke="#dfe3e8" />
+  <text x="711" y="531" class="head">Page behavior</text>
+  <text x="711" y="555" class="body">Home renders sections in document order; booking stays alongside the main detail column on desktop.</text>
+  <text x="711" y="578" class="small">Scroll state, dialogs, date selection, and review expansion live in client components.</text>
+
+  <text x="64" y="678" class="section">INTERACTIVE PHOTO FLOW</text>
+  <rect x="64" y="695" width="1472" height="142" rx="14" class="card" filter="url(#shadow)" />
+  <rect x="92" y="731" width="265" height="72" rx="10" fill="#edf5fb" stroke="#d6e5f1" />
+  <text x="112" y="760" class="head">Gallery image click</text>
+  <text x="112" y="784" class="mono">selected photo source</text>
+  <path d="M367 767h78" class="flow" marker-end="url(#arrowPink)" />
+  <rect x="457" y="731" width="294" height="72" rx="10" fill="#fff3f5" stroke="#f0c7d0" />
+  <text x="477" y="760" class="head">PhotoTour</text>
+  <text x="477" y="784" class="mono">scrolls to matching allPhotos index</text>
+  <path d="M761 767h78" class="flow" marker-end="url(#arrowPink)" />
+  <rect x="851" y="731" width="294" height="72" rx="10" fill="#f4effb" stroke="#e4d9f2" />
+  <text x="871" y="760" class="head">Lightbox</text>
+  <text x="871" y="784" class="mono">allPhotos[index] | previous and next</text>
+  <path d="M1155 767h78" class="flow" marker-end="url(#arrowPink)" />
+  <rect x="1245" y="731" width="256" height="72" rx="10" fill="#eef7f1" stroke="#d6eadb" />
+  <text x="1265" y="760" class="head">Back to tour</text>
+  <text x="1265" y="784" class="mono">returns to PhotoTour</text>
+
+  <text x="64" y="883" class="section">SHARED DATA AND STATIC ASSETS</text>
+  <rect x="64" y="900" width="1472" height="111" rx="14" class="card" filter="url(#shadow)" />
+  <rect x="88" y="923" width="370" height="64" rx="10" fill="#eef2f7" />
+  <text x="108" y="948" class="head">Listing data</text>
+  <text x="108" y="970" class="mono">src/data/listing.ts | property | photos | reviews | ratings</text>
+  <path d="M465 955h45" class="line" marker-end="url(#arrow)" />
+  <rect x="522" y="923" width="456" height="64" rx="10" fill="#f8f3ec" />
+  <text x="542" y="948" class="head">Public assets</text>
+  <text x="542" y="970" class="mono">public/images/{branding,listings,hosts,reviews,ui}</text>
+  <path d="M985 955h45" class="line" marker-end="url(#arrow)" />
+  <rect x="1042" y="923" width="470" height="64" rx="10" fill="#edf5fb" />
+  <text x="1062" y="948" class="head">Image rendering</text>
+  <text x="1062" y="970" class="mono">SafeImg | local public URLs | remote fallback when needed</text>
+</svg>
