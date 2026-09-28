@@ -427,6 +427,7 @@ export const reviews: Review[] = [
     stars: 5,
     date: "May 2026",
     text: "Great place. Exactly as described in the listing.",
+    src: "/images/reviews/Mohd.png",
     avatarLock: 204,
   },
 ];
